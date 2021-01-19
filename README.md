@@ -2,4 +2,4 @@
 ## Pruebas Unitarias
 Clase Movie
 
-![Image](https://github.com/avillao/DS_Taller9_Test/blob/main/MovieTest.jpeg)
+![Image](https://github.com/avillao/DS_Taller9_Test/blob/master/MovieTest.jpeg)
