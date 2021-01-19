@@ -6,4 +6,4 @@ Clase Movie
 
 Clase VideoGameRentalTest
 
-
+![Image](https://github.com/avillao/DS_Taller9_Test/blob/master/VideoGameRentalTest.jpeg)
