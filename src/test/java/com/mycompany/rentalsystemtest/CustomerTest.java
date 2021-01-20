@@ -43,11 +43,11 @@ public class CustomerTest {
     /**
      * Test of addMovieRental method, of class Customer.
      */
- 
+    @Test
     public void testAddMovieRental() {
         assertTrue(c.addMovieRental(new MovieRental(new Movie("Mulan", Movie.CHILDRENS), 2)));
     }
-
+    @Test
     public void testAddVideoGameRental() {
         assertTrue(c.addVideoGameRental(new VideoGameRental("Gta V", 3, false)));
     }
