@@ -61,11 +61,4 @@ public class MovieTest {
         assertEquals(arg, instance.getPriceCode());
     }
     
-    Movie theManWhoKnewTooMuch;
-    @Test
-    public void testGetTitle() {
-        Movie theManWhoKnewTooMuch = new Movie("The Man Who Knew Too Much", Movie.REGULAR);
-        assertEquals("The Man Who Knew Too Much", theManWhoKnewTooMuch._title);
-    }
-    
 }

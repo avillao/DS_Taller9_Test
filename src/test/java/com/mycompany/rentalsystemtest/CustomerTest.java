@@ -28,9 +28,12 @@ public class CustomerTest {
     @AfterClass
     public static void tearDownClass() {
     }
-    
+    Movie theManWhoKnewTooMuch;
+    Customer c;
     @Before
     public void setUp() {
+        theManWhoKnewTooMuch = new Movie("The Man Who Knew Too Much", Movie.REGULAR);
+        c = new Customer("Aaron");
     }
     
     @After
@@ -40,27 +43,13 @@ public class CustomerTest {
     /**
      * Test of addMovieRental method, of class Customer.
      */
-    @Test
+ 
     public void testAddMovieRental() {
-        System.out.println("addMovieRental");
-        MovieRental arg = null;
-        Customer instance = null;
-        instance.addMovieRental(arg);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertTrue(c.addMovieRental(new MovieRental(new Movie("Mulan", Movie.CHILDRENS), 2)));
     }
 
-    /**
-     * Test of addVideoGameRental method, of class Customer.
-     */
-    @Test
     public void testAddVideoGameRental() {
-        System.out.println("addVideoGameRental");
-        VideoGameRental arg = null;
-        Customer instance = null;
-        instance.addVideoGameRental(arg);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertTrue(c.addVideoGameRental(new VideoGameRental("Gta V", 3, false)));
     }
 
     /**
@@ -68,13 +57,25 @@ public class CustomerTest {
      */
     @Test
     public void testStatement() {
-        System.out.println("statement");
-        Customer instance = null;
-        String expResult = "";
-        String result = instance.statement();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Customer johnDoe = new Customer("John Doe");
+        johnDoe.addMovieRental(new MovieRental(theManWhoKnewTooMuch, 1));
+        assertEquals("Rental Record for John Doe\n" +
+                     "\tThe Man Who Knew Too Much\t2.0\n" +
+                     "Amount owed is 2.0\n" +
+                     "You earned 1 frequent renter points", johnDoe.statement());
+        johnDoe.addMovieRental(new MovieRental(theManWhoKnewTooMuch, 3));
+        assertEquals("Rental Record for John Doe\n" +
+                     "\tThe Man Who Knew Too Much\t2.0\n" +
+                     "\tThe Man Who Knew Too Much\t3.5\n" +
+                     "Amount owed is 5.5\n" +
+                     "You earned 2 frequent renter points", johnDoe.statement());
+        johnDoe.addMovieRental(new MovieRental(theManWhoKnewTooMuch, 5));
+        assertEquals("Rental Record for John Doe\n" +
+                     "\tThe Man Who Knew Too Much\t2.0\n" +
+                     "\tThe Man Who Knew Too Much\t3.5\n" +
+                     "\tThe Man Who Knew Too Much\t6.5\n" +
+                     "Amount owed is 12.0\n" +
+                     "You earned 3 frequent renter points", johnDoe.statement());
     }
     
     @Test

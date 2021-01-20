@@ -40,7 +40,7 @@ public class MovieRentalTest {
         theManWhoKnewTooMuch = new Movie("The Man Who Knew Too Much", Movie.REGULAR);
         mulan = new Movie("Mulan", Movie.CHILDRENS);
         slumdogMillionaire = new Movie("Slumdog Millionaire", Movie.NEW_RELEASE);
-        c = new Customer("Aaron");
+        
     }
     
     /**
@@ -59,15 +59,7 @@ public class MovieRentalTest {
         assertEquals(theManWhoKnewTooMuch, new MovieRental(theManWhoKnewTooMuch, 2).getMovie());
     }
     
-    public void TestAddMovieRental() {
-        assertTrue(c.addMovieRental(new MovieRental(mulan, 2)));
-    }
-
-    public void TestAddVideoGameRental() {
-        assertTrue(c.addVideoGameRental(new VideoGameRental("Gta V", 3, false)));
-    }
-    
-        @Test
+    @Test
     public void testStatementRegularMovieOnly() {
         // regular movies cost $2.00 for the first 2 days, and $1.50/day thereafter
         // a rental earns 1 frequent-renter point no matter how many days
@@ -99,18 +91,18 @@ public class MovieRentalTest {
         // a rental earns 1 frequent-renter point no matter how many days
         Customer johnDoeJr = new Customer("Johnny Doe, Jr.");
         johnDoeJr.addMovieRental(new MovieRental(mulan, 1));
-        assertEquals("Rental Record for John Doe, Jr.\n" +
+        assertEquals("Rental Record for Johnny Doe, Jr.\n" +
                      "\tMulan\t1.5\n" +
                      "Amount owed is 1.5\n" +
                      "You earned 1 frequent renter points", johnDoeJr.statement());
         johnDoeJr.addMovieRental(new MovieRental(mulan, 3));
-        assertEquals("Rental Record for John Doe, Jr.\n" +
+        assertEquals("Rental Record for Johnny Doe, Jr.\n" +
                      "\tMulan\t1.5\n" +
                      "\tMulan\t1.5\n" +
                      "Amount owed is 3.0\n" +
                      "You earned 2 frequent renter points", johnDoeJr.statement());
         johnDoeJr.addMovieRental(new MovieRental(mulan, 5));
-        assertEquals("Rental Record for John Doe, Jr.\n" +
+        assertEquals("Rental Record for Johnny Doe, Jr.\n" +
                      "\tMulan\t1.5\n" +
                      "\tMulan\t1.5\n" +
                      "\tMulan\t3.0\n" +
