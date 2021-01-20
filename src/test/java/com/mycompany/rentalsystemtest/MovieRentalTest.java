@@ -105,8 +105,8 @@ public class MovieRentalTest {
         assertEquals("Rental Record for Johnny Doe, Jr.\n" +
                      "\tMulan\t1.5\n" +
                      "\tMulan\t1.5\n" +
-                     "\tMulan\t3.0\n" +
-                     "Amount owed is 6.0\n" +
+                     "\tMulan\t4.0\n" +
+                     "Amount owed is 7.0\n" +
                      "You earned 3 frequent renter points", johnDoeJr.statement());
     }
 
