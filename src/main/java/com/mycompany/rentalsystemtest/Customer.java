@@ -18,12 +18,12 @@ class Customer {
         _name = name;
     }
 
-    public void addMovieRental(MovieRental arg) {
-        _movieRentals.add(arg);
+    public boolean addMovieRental(MovieRental arg) {
+        return _movieRentals.add(arg);
     }
 
-    public void addVideoGameRental(VideoGameRental arg) {
-        _videoGameRental.add(arg);
+    public boolean addVideoGameRental(VideoGameRental arg) {
+        return _videoGameRental.add(arg);
     }
     
     public String statement() {

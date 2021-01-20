@@ -2,6 +2,7 @@ import org.junit.*;
 
 public class MovieRentalTest extends junit.framework.TestCase {
 
+    // Listo
     Movie theManWhoKnewTooMuch, mulan, slumdogMillionaire;
     @Before
     public void setUp() {
@@ -10,11 +11,13 @@ public class MovieRentalTest extends junit.framework.TestCase {
         slumdogMillionaire = new Movie("Slumdog Millionaire", Movie.NEW_RELEASE);
     }
 
+    //Listo
     @Test
     public void testGetPriceCode() {
         assertEquals(Movie.REGULAR, theManWhoKnewTooMuch.getPriceCode());
     }
-
+    
+    //Listo
     @Test
     public void testGetTitle() {
         assertEquals("The Man Who Knew Too Much", theManWhoKnewTooMuch._title);
@@ -28,16 +31,19 @@ public class MovieRentalTest extends junit.framework.TestCase {
         assertEquals(Movie.REGULAR, theManWhoKnewTooMuch.getPriceCode());
     }
 
+    //Listo
     @Test
     public void testGetDaysRented() {
         assertEquals(2, new MovieRental(theManWhoKnewTooMuch, 2).getDaysRented());
     }
 
+    //Listo
     @Test
     public void testGetMovie() {
         assertEquals(theManWhoKnewTooMuch, new MovieRental(theManWhoKnewTooMuch, 2).getMovie());
     }
 
+    //Listo
     @Test
     public void testGetName() {
         String name = "John Doe"; 
